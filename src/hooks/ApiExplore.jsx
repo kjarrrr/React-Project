@@ -22,7 +22,7 @@ export const ExploreStamp = [
     },
     {
         id: 4,
-        url: "public/public_Explore/tiktok_jerramaetorrejoso_7616689053370453256.mp4",
+        url: "public_Explore/tiktok_jerramaetorrejoso_7616689053370453256.mp4",
         user: "jerramaetorrejoso",
         description: "HAHAHAHAHAHAHHA",
         song: "original sound - ONDE🎶🎨",

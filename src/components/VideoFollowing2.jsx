@@ -2,11 +2,12 @@ import { useNavigate } from "react-router";
 
 export function VideoFollowing2({ video }) {
     const navigate = useNavigate();
+    const baseUrl = import.meta.env.BASE_URL;
 
     return (
         <div className="w-50 h-70 group">
             <video
-                src={video.url}
+                src={`${baseUrl}${video.url}`}
                 className="w-full h-full object-cover rounded-xl my-20"
                 loop
                 muted

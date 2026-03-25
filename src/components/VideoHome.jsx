@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 export function VideoHome({ video }) {
 
     const videoRef = useRef(null);
+    const baseUrl = import.meta.env.BASE_URL;
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -42,7 +43,7 @@ export function VideoHome({ video }) {
                 className="videoPlayer"
                 loop
                 onClick={(e) => e.target.paused ? e.target.play() : e.target.pause()}
-                src={video.url}
+                src={`${baseUrl}${video.url}`}
             />
 
             <div className="videoOverlay-info">

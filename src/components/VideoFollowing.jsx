@@ -1,9 +1,10 @@
 export function VideoFollowing({ video, showPopUp }) {
+    const baseUrl = import.meta.env.BASE_URL;
     return (
 
         <div className="w-50 h-70 group">
             <video
-                src={video.url}
+                src={`${baseUrl}${video.url}`}
                 className="w-50 h-70 object-cover rounded-lg my-20"
                 loop
                 muted
