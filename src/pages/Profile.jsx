@@ -70,11 +70,22 @@ export function Profile() {
 
         }
     }, [userData]);
+    
+    const copyProfileLink = () => {
+    const url = window.location.href;
+
+    navigator.clipboard.writeText(url)
+        .then(() => {
+            alert("¡Link de la página copiado!");
+        })
+        .catch((err) => {
+            console.error("Error al copiar: ", err);
+        });
+};
 
     const Updater = (e) => {
         e.preventDefault();
         const user = auth.currentUser;
-
         const db = getDatabase();
         const userRef = ref(db, `users/${user.uid}`);
 
@@ -121,7 +132,7 @@ export function Profile() {
 
                     <main className="flex flex-col gap-12">
                         <div className="px-5 py-3">
-                            <h2 className="flex flex-start text-xl" >Foto de perfil</h2>
+                            <h2 className="flex flex-start" >Foto de perfil</h2>
                             <div className="flex justify-center align-center">
                                 <img src={userData?.imageUrl} className="w-40 h-40 rounded-full" alt="" />
                             </div>
@@ -186,14 +197,14 @@ export function Profile() {
 
                     <div className="flex flex-row gap-8">
                         <img src={userData?.imageUrl || auth.currentUser?.photoURL || "https://i.pinimg.com/236x/13/74/20/137420f5b9c39bc911e472f5d20f053e.jpg"}
-                            className="w-20 h-20 rounded-full"
+                            className="w-40 h-40 rounded-full"
                             alt="Foto de perfil">
 
                         </img>
 
                         <div className="flex flex-col">
                             <div>
-                                <h2> {loading ? "..." : (nombreVisible || userData?.usercreate || auth.currentUser?.displayName || "Usuario")} </h2>
+                                <h2 className="text-xl"> {loading ? "..." : (nombreVisible || userData?.usercreate || auth.currentUser?.displayName || "Usuario")} </h2>
                         </div>
 
                         <div className="flex gap-5 py-5">
@@ -203,7 +214,7 @@ export function Profile() {
                                 <button onClick={showDeletePopUp} className="text-xl">
                                     <FaRegTrashAlt />
                                 </button>
-                                <button className="text-xl">
+                                <button onClick={copyProfileLink} className="text-xl">
                                     <svg fill="currentColor" color="inherit" font-size="inherit" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M21.68 3.18a2 2 0 0 1 2.14.32l21.5 19a2 2 0 0 1-.02 3.02l-21.5 18.5a2 2 0 0 1-3.3-1.52v-9.97c-5.68.28-11.95 1.75-16.09 5.88A2 2 0 0 1 1 37c0-11.68 7.7-21.05 19.5-21.94V5a2 2 0 0 1 1.18-1.82ZM24.5 30.5v7.64l16.46-14.16L24.5 9.44V17a2 2 0 0 1-2.05 2c-8.4-.21-15.62 5.34-17.09 13.66 4.47-2.7 9.8-3.87 14.98-4.13.68-.03 1.22-.04 1.6-.04 1.19 0 2.56.26 2.56 2.01Z"></path></svg>
                                 </button>
                             </main>
