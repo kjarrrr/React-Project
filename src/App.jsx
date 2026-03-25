@@ -1,4 +1,5 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
+import { auth } from "./config/firebase";
 import { Home } from "./pages/Home"
 import { Explore } from "./pages/Explore"
 import { Following } from "./pages/Following"
@@ -159,7 +160,7 @@ function App() {
                     </header>
 
                     <div className="logButtons">
-                      <Login closePopUp={closePopUp} setGetBack={setGetBack} login={login} setLogin={setLogin} />
+                      <Login closePopUp={closePopUp} setGetBack={setGetBack} login={login} setLogin={setLogin} setUserpage={setUserpage} />
                     </div>
                   </div>
                   <footer >
