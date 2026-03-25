@@ -45,7 +45,7 @@ export function Registration({ setGetBack, register, setRegister, setUserpage })
         set(userRef, {
           usercreate: user.displayName,
           imageUrl: user.photoURL,      
-          email: user.email
+          email: user.email,
         }).then(() => {
           alert("Sesión iniciada y perfil creado");
           setUserpage("username");
@@ -53,7 +53,6 @@ export function Registration({ setGetBack, register, setRegister, setUserpage })
       })
       .catch((error) => {
         console.error("Error en Google:", error.code);
-        alert("Error al conectar con Google");
       });
   }
 

@@ -28,7 +28,7 @@ export function TopRight2() {
 
                     <div
                         className="pfpTopBar">
-                        <img onClick={() => navigate("/Profile")} className="p-1 rounded-full cursor-pointer" src={userData?.imageUrl}
+                        <img onClick={() => navigate("/Profile")} className="p-1 rounded-full cursor-pointer" src={userData?.imageUrl || auth.currentUser?.photoURL || "https://i.pinimg.com/236x/13/74/20/137420f5b9c39bc911e472f5d20f053e.jpg"}
                             alt="Foto de perfil" ></img>
                     </div>
                 </div >

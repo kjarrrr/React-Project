@@ -4,6 +4,7 @@ import { FollowingStamp } from "../hooks/ApiFollowing";
 export function ProfileFamous() {
     const { username } = useParams();
     const navigate = useNavigate();
+    const baseUrl = import.meta.env.BASE_URL;
 
     const artist = FollowingStamp.find(u => u.user === username);
 
@@ -14,7 +15,7 @@ export function ProfileFamous() {
 
             <div className="flex flex-row gap-8 items-start">
                 <img 
-                    src={artist.img} 
+                    src={`${baseUrl}${artist.img}`}
                     className="w-40 h-40 rounded-full object-cover border-4 border-zinc-800" 
                 />
 
