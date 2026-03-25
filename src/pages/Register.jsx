@@ -55,9 +55,7 @@ export function Registration({ closePopUp ,setGetBack, register, setRegister, se
 
   return (
     <>
-
       {
-
         (
           register === "logButtons" ? (
             <div className="logButtons">

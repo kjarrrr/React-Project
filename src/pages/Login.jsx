@@ -41,7 +41,6 @@ export function Login({ setGetBack, login, setLogin, closePopUp, setUserpage }) 
         
         alert("Sesión iniciada con Google: " + nombreGoogle);
         closePopUp();
-        setUserpage("username");
       })
       .catch((error) => {
         console.error("Error en Google:", error.code);
