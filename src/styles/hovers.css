@@ -10,6 +10,14 @@
     background-color: var(--only);
 }
 
+.profileFamousContainer .profileChange:hover {
+    background-color: rgb(244, 0, 57);
+}
+
+.profileFamousContainer main button:hover {
+    background-color: var(--only);
+}
+
 .footEditPopUp button:hover {
     background-color: rgb(244, 0, 57);
 }

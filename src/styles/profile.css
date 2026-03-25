@@ -12,8 +12,9 @@
     background-color: var(--only2);
     color: var(--text);
 }
-.profileFamousContainer main button{
-     color: var(--text);
+
+.profileContainer main button {
+    color: var(--text);
 }
 
 .profileChange {
