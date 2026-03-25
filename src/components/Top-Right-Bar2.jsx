@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { UseAuth } from "../config/useAuth";
+import { auth } from "../config/firebase";
 
 export function TopRight2() {
 

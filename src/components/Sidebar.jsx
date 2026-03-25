@@ -7,9 +7,6 @@ import { UseAuth } from "../config/useAuth"
 
 
 
-
-
-
 export function SideBar({ showPopUp, toggleDarkMode }) {
 
 
