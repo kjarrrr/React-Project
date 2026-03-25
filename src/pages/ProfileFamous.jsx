@@ -18,7 +18,7 @@ export function ProfileFamous() {
     }
 
     return (
-        <main className="profileContainer p-10">
+        <main className="profileFamousContainer p-10">
 
             <button onClick={() => navigate(-1)} className="mb-5 text-zinc-400 hover:text-white">Volver</button>
 
