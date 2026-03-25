@@ -1,4 +1,4 @@
-import { Route, Routes, useNavigate } from "react-router"
+import { HashRouter as Routes, Route, useNavigate } from 'react-router';
 import { Home } from "./pages/Home"
 import { Explore } from "./pages/Explore"
 import { Following } from "./pages/Following"
@@ -19,6 +19,7 @@ import { UseDarkMode } from "./hooks/useDarkmode"
 import { CreateUsername } from "./components/Username-popup"
 import { Following2 } from "./pages/Following2"
 import { ProfileFamous } from "./pages/ProfileFamous"
+
 
 
 

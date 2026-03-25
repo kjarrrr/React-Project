@@ -35,16 +35,22 @@ export function Registration({ setGetBack, register, setRegister, setUserpage })
 
   function GoogleRegister() {
     signInWithPopup(auth, provider)
-
       .then((result) => {
-        const credential = GoogleAuthProvider.credentialFromResult(result)
-        alert("Sesion iniciada")
-      })
+        const user = result.user;
 
-      .catch((error) => {
-        const credential = GoogleAuthProvider.credentialFromError(error)
-        alert("Error")
+       
+        const nombreGoogle = user.displayName; 
+        const fotoGoogle = user.photoURL;      
+        console.log("Datos de Google:", nombreGoogle, fotoGoogle);
+
+        alert("Sesión iniciada con Google: " + nombreGoogle);
+
+        setUserpage("username");
       })
+      .catch((error) => {
+        console.error("Error en Google:", error.code);
+        alert("Error al conectar con Google");
+      });
   }
 
 

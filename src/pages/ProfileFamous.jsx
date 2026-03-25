@@ -43,11 +43,10 @@ export function ProfileFamous() {
                 </div>
             </div>
 
-            {/* Aquí podrías mapear los videos de este artista */}
             <div className="mt-12 border-t border-zinc-800 pt-8">
                 <h3 className="text-xl font-semibold mb-4 text-zinc-500">Videos</h3>
                 <div className="grid grid-cols-3 gap-2">
-                    {/* Placeholder para los videos del artista */}
+                    
                     <div className="bg-zinc-900 aspect-[3/4] rounded-md animate-pulse"></div>
                     <div className="bg-zinc-900 aspect-[3/4] rounded-md animate-pulse"></div>
                     <div className="bg-zinc-900 aspect-[3/4] rounded-md animate-pulse"></div>

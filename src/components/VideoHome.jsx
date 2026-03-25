@@ -36,8 +36,6 @@ export function VideoHome({ video }) {
 
         <section className="videoSection">
 
-            
-
             <video
                 ref={videoRef}
                 className="videoPlayer"

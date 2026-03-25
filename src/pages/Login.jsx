@@ -33,16 +33,20 @@ export function Login({ setGetBack, login, setLogin, closePopUp }) {
   function GoogleLogin(e) {
     e.preventDefault()
     signInWithPopup(auth, provider)
-
       .then((result) => {
-        const credential = GoogleAuthProvider.credentialFromResult(result)
-        alert("Sesion iniciada")
-        closePopUp();
-      })
+        const user = result.user;
+        const nombreGoogle = user.displayName; 
+        const fotoGoogle = user.photoURL;      
+        console.log("Datos de Google:", nombreGoogle, fotoGoogle);
 
-      .catch((error) => {
-        const credential = GoogleAuthProvider.credentialFromError(error)
+        alert("Sesión iniciada con Google: " + nombreGoogle);
+        closePopUp();
+        setUserpage("username");
       })
+      .catch((error) => {
+        console.error("Error en Google:", error.code);
+        alert("Error al conectar con Google");
+      });
   }
 
   return (
