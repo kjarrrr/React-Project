@@ -1,4 +1,5 @@
 import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getDatabase, ref, set } from "firebase/database";
 import { useState } from "react";
 import { auth } from "../config/firebase";
 
@@ -8,9 +9,10 @@ export function Registration({ setGetBack, register, setRegister, setUserpage })
 
 
 
-  const [email, setEmail] = useState();
-  const [passworder, setPassworder] = useState();
+  const [email, setEmail] = useState("");
+  const [passworder, setPassworder] = useState("");
   const provider = new GoogleAuthProvider();
+  const db = getDatabase();
 
 
 
@@ -37,7 +39,6 @@ export function Registration({ setGetBack, register, setRegister, setUserpage })
     signInWithPopup(auth, provider)
       .then((result) => {
         const user = result.user;
-        const db = getDatabase();
 
       
         const userRef = ref(db, `users/${user.uid}`);
