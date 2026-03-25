@@ -32,11 +32,11 @@ export function ProfileFamous() {
                     <h2 className="text-3xl font-bold">@{artist.user}</h2>
                     
                     <div className="flex gap-3">
-                        <button className="bg-rose-500 text-white px-12 py-2 font-bold rounded-sm hover:bg-rose-600 transition-all">
+                        <button className="bg-rose-500 text-white px-12 py-2 font-bold rounded-sm hover:bg-rose-600 ">
                             Seguir
                         </button>
 
-                        <button className="bg-zinc-800 p-2 text-white rounded-sm border border-zinc-700">
+                        <button className="bg-zinc-800 p-2 text-white rounded-sm border hover:bg-zinc-900">
                             <svg fill="currentColor" width="20" height="20" viewBox="0 0 48 48"><path d="M21.68 3.18a2 2 0 0 1 2.14.32l21.5 19a2 2 0 0 1-.02 3.02l-21.5 18.5a2 2 0 0 1-3.3-1.52v-9.97c-5.68.28-11.95 1.75-16.09 5.88A2 2 0 0 1 1 37c0-11.68 7.7-21.05 19.5-21.94V5a2 2 0 0 1 1.18-1.82Z"></path></svg>
                         </button>
                     </div>
