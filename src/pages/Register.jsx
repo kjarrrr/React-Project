@@ -1,8 +1,8 @@
 import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { getDatabase, ref, set } from "firebase/database";
+import { ref, set } from "firebase/database";
 import { useState } from "react";
 import { auth } from "../config/firebase";
-
+import { auth, db, provider } from "../config/firebase";
 
 
 export function Registration({ setGetBack, register, setRegister, setUserpage }) {
@@ -11,9 +11,6 @@ export function Registration({ setGetBack, register, setRegister, setUserpage })
 
   const [email, setEmail] = useState("");
   const [passworder, setPassworder] = useState("");
-  const provider = new GoogleAuthProvider();
-  const db = getDatabase();
-
 
 
   function registerTiktok(e) {
