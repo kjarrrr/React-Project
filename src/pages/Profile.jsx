@@ -193,7 +193,7 @@ export function Profile() {
 
                         <div className="flex flex-col">
                             <div>
-                                {loading ? "..." : (nombreVisible || userData?.usercreate || auth.currentUser?.displayName || "Usuario")}</h2>
+                                <h2> {loading ? "..." : (nombreVisible || userData?.usercreate || auth.currentUser?.displayName || "Usuario")} </h2>
                         </div>
 
                         <div className="flex gap-5 py-5">
