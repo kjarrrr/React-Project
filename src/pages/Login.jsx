@@ -4,7 +4,7 @@ import { auth } from "../config/firebase";
 
 
 
-export function Login({ setGetBack, login, setLogin, closePopUp }) {
+export function Login({ setGetBack, login, setLogin, closePopUp, setUserpage }) {
 
 
   const [email, setEmail] = useState();
@@ -38,7 +38,7 @@ export function Login({ setGetBack, login, setLogin, closePopUp }) {
         const nombreGoogle = user.displayName; 
         const fotoGoogle = user.photoURL;      
         console.log("Datos de Google:", nombreGoogle, fotoGoogle);
-
+        
         alert("Sesión iniciada con Google: " + nombreGoogle);
         closePopUp();
         setUserpage("username");

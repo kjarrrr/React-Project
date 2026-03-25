@@ -1,7 +1,6 @@
-import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { ref, set } from "firebase/database";
 import { useState } from "react";
-import { auth } from "../config/firebase";
 import { auth, db, provider } from "../config/firebase";
 
 
@@ -36,8 +35,6 @@ export function Registration({ setGetBack, register, setRegister, setUserpage })
     signInWithPopup(auth, provider)
       .then((result) => {
         const user = result.user;
-
-      
         const userRef = ref(db, `users/${user.uid}`);
 
         set(userRef, {

@@ -8,6 +8,15 @@ export function ProfileFamous() {
 
     const artist = FollowingStamp.find(u => u.user === username);
 
+    if (!artist) {
+        return (
+            <main className="profileContainer p-10 text-white">
+                <button onClick={() => navigate(-1)} className="mb-5 text-zinc-400">Volver</button>
+                <p>Cargando perfil o usuario no encontrado...</p>
+            </main>
+        );
+    }
+
     return (
         <main className="profileContainer p-10">
 
