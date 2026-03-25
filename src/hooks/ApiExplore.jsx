@@ -1,0 +1,73 @@
+export const ExploreStamp = [
+    {
+        id: 1,
+        url: "public/public_Explore/tiktok_krisrofficial_7617595902068362510.mp4",
+        user: "krisrofficial",
+        description: "Al que se le acerque a la jermu 🙂‍↕️😘",
+        song: "GANAS KRIS R",
+    },
+    {
+        id: 2,
+        url: "public_Explore/tiktok_el.simes_7617321956127395092.mp4",
+        user: "el.simes",
+        description: "",
+        song: "suara asli - INDOZONE",
+    },
+    {
+        id: 3,
+        url: "public_Explore/tiktok_yefersoncossio_7617621636463856916.mp4",
+        user: "yefersoncossio",
+        description: "Con ella no puedo 🫠 @Carolina Gómez",
+        song: "original sound Yef",
+    },
+    {
+        id: 4,
+        url: "public_Explore/tiktok_jerramaetorrejoso_7616689053370453256.mp4",
+        user: "jerramaetorrejoso",
+        description: "HAHAHAHAHAHAHHA",
+        song: "original sound - ONDE🎶🎨",
+    },
+    {
+        id: 5,
+        url: "public_Explore/ssstik.io_1774379342819.mp4",
+        user: "manpher3.8",
+        description: "#convivencia  #policia  #viraltiktok  #viral  #viralvideo ",
+        song: "sonido original Manpher3.8",
+    },
+    {
+        id: 6,
+        url: "public_Explore/tiktok_valdiriisabellaa_7616997117944532244.mp4",
+        user: "valdiriisabellaa",
+        description: "Lista para perrear sola’casi me caigo JAJAJAJAJAKAA’🤣🤣😔|| #foryou #valdiri #viral #fyp #tiktok ",
+        song: "original sound Cupcake",
+    },
+    {
+        id: 7,
+        url: "public_Explore/ssstik.io_@eliesparzaa_1774379472368.mp4",
+        user: "eliesparzaa",
+        description: "Dale nene dale!! 🙈",
+        song: "Thriller Film Moment Mashup",
+    },
+    {
+        id: 8,
+        url: "public_Explore/tiktok_elii.alcaraz_7616874910001990919.mp4",
+        user: "elii.alcaraz",
+        description: "#quetienedoraenlamochila  #viralvideo",
+        song: "sonido original VB",
+    },
+    {
+        id: 9,
+        url: "public_Explore/tiktok_richardaniibalgmail.com_7618994134656814356.mp4",
+        user: "richardaniibalgmail.com",
+        description: "mi hija papa la maestra me dijo q llevara un peinado loco y listo y aqui esta su peinado loco con su loro",
+        song: "sonido original £€* $,%*# ?#",
+    },
+    {
+        id: 10,
+        url: "public_Explore/tiktok_carlhoos__7617224894060825869.mp4",
+        user: "carlhoos_",
+        description: "Ya saben cómo se hace? 🧚🏻‍♀️  #trend #flotar #vuela #trend",
+        song: "original sound Meagan Nugent",
+},
+
+];

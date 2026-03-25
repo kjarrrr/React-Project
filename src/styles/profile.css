@@ -1,0 +1,20 @@
+.profileContainer div button {
+    border-radius: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    cursor: pointer;
+
+}
+
+.profileContainer main button {
+    background-color: var(--only2);
+    color: var(--text);
+}
+
+.profileChange {
+    background-color: rgb(255, 54, 78);
+    color: white;
+    font-weight: 500;
+}

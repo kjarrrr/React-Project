@@ -1,0 +1,106 @@
+import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { useState } from "react";
+import { auth } from "../config/firebase";
+
+
+
+export function Login({ setGetBack, login, setLogin, closePopUp }) {
+
+
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const provider = new GoogleAuthProvider();
+
+  function loginTiktok(e) {
+    e.preventDefault()
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed up 
+        const user = userCredential.user;
+        alert("Sesion iniciada")
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert("Usuario no encontrado")
+        // ..
+      });
+  }
+
+  
+
+  function GoogleLogin(e) {
+    e.preventDefault()
+    signInWithPopup(auth, provider)
+
+      .then((result) => {
+        const credential = GoogleAuthProvider.credentialFromResult(result)
+        alert("Sesion iniciada")
+        closePopUp();
+      })
+
+      .catch((error) => {
+        const credential = GoogleAuthProvider.credentialFromError(error)
+      })
+  }
+
+  return (
+    <>
+
+      {
+        login === "logButtons" ? (
+          <div className="logButtons">
+
+            <span
+              onClick={() => {
+                setGetBack(true),
+                  setLogin("login-form")
+              }}
+            >
+
+              <button >
+                <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                  <path d="M24 3a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 23C13.06 26 7 33.92 7 40.44 7 44 9 44 16 44h16c7 0 9 0 9-3.56C41 33.92 34.94 26 24 26Z"></path></svg>
+                <div>Usar correo</div>
+              </button>
+            </span>
+
+            <button onClick={GoogleLogin}>
+              <svg width="1em" data-e2e="" height="1em" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M43 24.4313C43 23.084 42.8767 21.7885 42.6475 20.5449H24.3877V27.8945H34.8219C34.3724 30.2695 33.0065 32.2818 30.9532 33.6291V38.3964H37.2189C40.885 35.0886 43 30.2177 43 24.4313Z" fill="#4285F4"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M24.3872 43.001C29.6219 43.001 34.0107 41.2996 37.2184 38.3978L30.9527 33.6305C29.2165 34.7705 26.9958 35.4441 24.3872 35.4441C19.3375 35.4441 15.0633 32.1018 13.5388 27.6108H7.06152V32.5337C10.2517 38.7433 16.8082 43.001 24.3872 43.001Z" fill="#34A853"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.5395 27.6094C13.1516 26.4695 12.9313 25.2517 12.9313 23.9994C12.9313 22.7472 13.1516 21.5295 13.5395 20.3894V15.4668H7.06217C5.74911 18.0318 5 20.9336 5 23.9994C5 27.0654 5.74911 29.9673 7.06217 32.5323L13.5395 27.6094Z" fill="#FBBC04"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M24.3872 12.5568C27.2336 12.5568 29.7894 13.5155 31.7987 15.3982L37.3595 9.94866C34.0018 6.88281 29.6131 5 24.3872 5C16.8082 5 10.2517 9.25777 7.06152 15.4674L13.5388 20.39C15.0633 15.8991 19.3375 12.5568 24.3872 12.5568Z" fill="#EA4335"></path></svg>
+              <div className="">Continuar con Google</div>
+            </button >
+          </div >
+
+        ) : (
+          <div className="login-form">
+            <form onSubmit={loginTiktok}>
+
+              <div className="flex gap-3 flex-col">
+                <input
+                  type="text"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Email or Username" />
+
+                <input
+                  type="text"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Password" />
+              </div>
+
+              <div className="my-6 flex justify-center">
+                <button>Iniciar Sesión</button>
+              </div>
+            </form>
+          </div>
+        )
+      }
+    </>
+  )
+}

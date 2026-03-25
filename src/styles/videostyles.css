@@ -1,0 +1,91 @@
+.videoFeed {
+    width: 350px;
+    height: 90vh;
+    border-radius: 20px;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none;
+    background-color: black;
+    position: relative;
+}
+
+.videoFeed::-webkit-scrollbar {
+    display: none;
+}
+
+.videoSection {
+    width: 100%;
+    height: 90vh;
+    scroll-snap-align: start;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.videoPlayer {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.videoOverlay-info {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    color: white;
+    width: 70%;
+    z-index: 10;
+}
+
+.videoOverlay-actions {
+    position: absolute;
+    bottom: 40px;
+    right: 15px;
+
+}
+
+.actionBtn {
+    background-color: rgba(31, 41, 55, 0.8);
+    padding: 12px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.2s;
+}
+
+.exploreContainer {
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    min-height: 100vh;
+    gap: 30px;
+    margin-left: 300px;
+
+}
+
+.snap-y {
+    scroll-snap-type: y mandatory;
+}
+
+.snap-start {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+/* Asegúrate de que el contenedor ocupe toda la pantalla */
+main.h-screen {
+    height: 100vh;
+}
+
+.followingContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    min-height: 100vh;
+    width: 700px;
+    gap: 30px;
+    margin-left: 10rem;
+}

@@ -1,0 +1,43 @@
+.mover3:hover {
+    background-color: var(--change);
+}
+
+.profileContainer .profileChange:hover {
+    background-color: rgb(244, 0, 57);
+}
+
+.profileContainer main button:hover {
+    background-color: var(--only);
+}
+
+.footEditPopUp button:hover {
+    background-color: rgb(244, 0, 57);
+}
+
+.TopButton:hover {
+    background-color: var(--change);
+}
+
+.ClosePanel:hover {
+    background-color: var(--bg3);
+}
+
+main button:hover {
+    background-color: var(--change);
+}
+
+h5:hover {
+    text-decoration: underline;
+}
+
+.foot1 span:hover {
+    text-decoration: underline;
+}
+
+.foot2 span:hover {
+    text-decoration: underline;
+}
+
+.pfpTopBar:hover{
+    background-color: rgba(170, 170, 170, 0.089);
+}

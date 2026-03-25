@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=TikTok+Sans:opsz,wght@12..36,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import "tailwindcss";
+
+
+.Grandbarrier1 {
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    padding: 12px;
+    z-index: 100;
+    margin-right: 4px;
+    margin-left: 4px;
+    background-color: var(--sidebar);
+    transition: all  cubic-bezier(.3, 0, .2, 1);
+}
+
+.Grandbarrier1.Grandbarrier2 {
+    width: 60px;
+    padding: 12px;
+    justify-content: center;
+}
+
+
+.mover1 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    gap: 12px;
+    width: 220px;
+    padding: 8px;
+    border-radius: 9999px;
+    background-color: var(--bg2);
+    cursor: pointer;
+    transition: all .35s cubic-bezier(.4, 0, .2, 1);
+
+}
+
+.icono {
+    position: absolute;
+    left: 8px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+.Search {
+    white-space: nowrap;
+    margin-left: 30px;
+    color: var(--text);
+    transition: width .35s cubic-bezier(.4, 0, .2, 1), opacity .2s ease;
+}
+
+.mover1.mover2 {
+    width: 40px;
+    padding: 8px;
+}
+
+.mover1.mover2 .Search {
+    width: 0;
+    opacity: 0;
+}
+
+.mover3 {
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+    gap: 10px;
+    border-radius: 0.5rem;
+    color: var(--text);
+}
+
+.mover3.active {
+    color: rgb(255, 0, 51);
+}
+
+
+[data-theme="dark"] .mover3.active {
+    color: rgb(255, 0, 51);
+}
+
+.mover3 svg {
+    font-size: 25px;
+}
+
+.TopButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9999px;
+    gap: 5px;
+    height: 30px;
+    width: 100px;
+    cursor: pointer;
+    
+}
+
+.mover4 {
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+    width: 40px;
+}
+
+.Sidebarrier {
+    position: relative;
+}
+
+
+.dissapear1 {
+    transition: opacity 0.4s ease;
+}
+
+.dissapear2 {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.dissapear3 {
+    transition: opacity 0s ease;
+}
+
+.dissapear4 {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+.panel {
+    border: solid var(--only);
+    border-width: 1px;
+    opacity: 0;
+    background-color: var(--bg);
+    transform: translateX(-80px);
+    animation: fadeIn 0.4s forwards;
+    z-index: 90;
+}
+
+.ClosePanel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg2);
+    border-radius: 9999px;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    transition: none;
+}
+
+.panel main {
+    margin-left: 10px;
+}
+
+.panel main button {
+    display: flex;
+    justify-content: start;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.more-line-separator {
+    margin-left: 15px;
+    height: 1px;
+    width: 280px;
+    background-color: lightgray;
+
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
