@@ -121,9 +121,9 @@ export function Profile() {
 
                     <main className="flex flex-col gap-12">
                         <div className="px-5 py-3">
-                            <h2 className="flex flex-start" >Foto de perfil</h2>
+                            <h2 className="flex flex-start text-xl" >Foto de perfil</h2>
                             <div className="flex justify-center align-center">
-                                <img src={userData?.imageUrl} className="w-20 h-20 rounded-full" alt="" />
+                                <img src={userData?.imageUrl} className="w-40 h-40 rounded-full" alt="" />
                             </div>
                         </div>
 
