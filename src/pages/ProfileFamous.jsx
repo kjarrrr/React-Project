@@ -10,7 +10,7 @@ export function ProfileFamous() {
     return (
         <main className="profileContainer p-10">
 
-            <button onClick={() => navigate(-1)} className="mb-5 text-zinc-400 hover:text-white">← Volver</button>
+            <button onClick={() => navigate(-1)} className="mb-5 text-zinc-400 hover:text-white">Volver</button>
 
             <div className="flex flex-row gap-8 items-start">
                 <img 

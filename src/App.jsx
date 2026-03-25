@@ -1,4 +1,4 @@
-import { HashRouter as Routes, Route, useNavigate } from 'react-router';
+import { Routes, Route, useNavigate } from 'react-router';
 import { Home } from "./pages/Home"
 import { Explore } from "./pages/Explore"
 import { Following } from "./pages/Following"

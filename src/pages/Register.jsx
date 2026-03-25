@@ -11,7 +11,7 @@ export function Registration({ setGetBack, register, setRegister, setUserpage })
   const [email, setEmail] = useState();
   const [passworder, setPassworder] = useState();
   const provider = new GoogleAuthProvider();
-  
+
 
 
   function registerTiktok(e) {
@@ -37,15 +37,19 @@ export function Registration({ setGetBack, register, setRegister, setUserpage })
     signInWithPopup(auth, provider)
       .then((result) => {
         const user = result.user;
+        const db = getDatabase();
 
-       
-        const nombreGoogle = user.displayName; 
-        const fotoGoogle = user.photoURL;      
-        console.log("Datos de Google:", nombreGoogle, fotoGoogle);
+      
+        const userRef = ref(db, `users/${user.uid}`);
 
-        alert("Sesión iniciada con Google: " + nombreGoogle);
-
-        setUserpage("username");
+        set(userRef, {
+          usercreate: user.displayName,
+          imageUrl: user.photoURL,      
+          email: user.email
+        }).then(() => {
+          alert("Sesión iniciada y perfil creado");
+          setUserpage("username");
+        });
       })
       .catch((error) => {
         console.error("Error en Google:", error.code);
