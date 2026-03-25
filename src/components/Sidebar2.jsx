@@ -192,10 +192,19 @@ export function SideBar2({ toggleDarkMode }) {
                                     > Company</h3></span>
                                 {info === "Company" && (
                                     <div className='flex flex-row gap-2 text-gray-400 font-semibold text-xs'>
-                                        <h5>About</h5>
-                                        <h5>Newsroom</h5>
-                                        <h5>Contact</h5>
-                                        <h5>Careers</h5>
+                                        <a href="https://www.tiktok.com/about?lang=en">
+                                            <h5>About</h5>
+                                        </a>
+                                        <a href="https://newsroom.tiktok.com/?lang=en">
+                                            <h5>Newsroom</h5>
+                                        </a>
+                                        <a href="https://www.tiktok.com/contact">
+                                            <h5>Contact</h5>
+                                        </a>
+
+                                        <a href="https://careers.tiktok.com/">
+                                            <h5>Careers</h5>
+                                        </a>
                                     </div>)}
 
 
@@ -210,15 +219,33 @@ export function SideBar2({ toggleDarkMode }) {
 
                                 {info === "Program" && (
                                     <div className='flex flex-wrap w-60 gap-2 text-gray-400 font-semibold text-xs'>
-                                        <h5>TikTok for Good</h5>
-                                        <h5>Advertise</h5>
-                                        <h5>Sell on TikTok Shop</h5>
-                                        <h5>TikTok Live Creator Networks</h5>
-                                        <h5>Developers</h5>
-                                        <h5>Transparency</h5>
-                                        <h5>TikTok Embeds</h5>
-                                        <h5>SoundOn Music Distribution</h5>
-                                        <h5>TikTok Live</h5>
+                                        <a href="https://www.tiktok.com/forgood">
+                                            <h5>TikTok for Good</h5>
+                                        </a>
+                                        <a href="https://www.tiktok.com/business/?attr_medium=tt_official_site_guidance&attr_source=tt_official_site&refer=tiktok_web">
+                                            <h5>Advertise</h5>
+                                        </a>
+                                        <a href="https://seller-us-accounts.tiktok.com/account/register?channel=ttcom_program">
+                                            <h5>Sell on TikTok Shop</h5>
+                                        </a>
+                                        <a href="https://www.tiktok.com/live/creator-networks/en?enter_from=tiktok_official">
+                                            <h5>TikTok Live Creator Networks</h5>
+                                        </a>
+                                        <a href="https://developers.tiktok.com/?refer=tiktok_web">
+                                            <h5>Developers</h5>
+                                        </a>
+                                        <a href="https://www.tiktok.com/transparency">
+                                            <h5>Transparency</h5>
+                                        </a>
+                                        <a href="https://www.tiktok.com/embed">
+                                            <h5>TikTok Embeds</h5>
+                                        </a>
+                                        <a href="https://www.soundon.global/">
+                                            <h5>SoundOn Music Distribution</h5>
+                                        </a>
+                                        <a href="https://www.tiktok.com/live">
+                                            <h5>TikTok Live</h5>
+                                        </a>
                                     </div>)}
 
 
@@ -233,16 +260,36 @@ export function SideBar2({ toggleDarkMode }) {
 
                                 {info === "Policy" && (
                                     <div className='flex flex-wrap w-60 gap-2 text-gray-400 font-semibold text-xs'>
-                                        <h5>Help</h5>
-                                        <h5>Safety</h5>
-                                        <h5>Terms</h5>
-                                        <h5>Privacy Police</h5>
-                                        <h5>Accessibility</h5>
-                                        <h5>Private Center</h5>
-                                        <h5>Creator Academy</h5>
-                                        <h5>Community Guidelines</h5>
-                                        <h5>Copyright</h5>
-                                        <h5>Law Enforcement Guidelines</h5>
+                                        <a href="https://www.tiktok.com/support?entrance=vertical_footer">
+                                            <h5>Help</h5>
+                                        </a>
+                                        <a href="https://www.tiktok.com/safety?lang=en">
+                                            <h5>Safety</h5>
+                                        </a>
+                                        <a href="https://www.tiktok.com/legal/terms-of-service?lang=en">
+                                            <h5>Terms</h5>
+                                        </a>
+                                        <a href="https://www.tiktok.com/legal/privacy-policy?lang=en">
+                                            <h5>Privacy Police</h5>
+                                        </a>
+                                        <a href="https://www.tiktok.com/accessibility/en">
+                                            <h5>Accessibility</h5>
+                                        </a>
+                                        <a href="https://www.tiktok.com/privacy/overview/en">
+                                            <h5>Private Center</h5>
+                                        </a>
+                                        <a href="https://www.tiktok.com/creator-academy">
+                                            <h5>Creator Academy</h5>
+                                        </a>
+                                        <a href="https://www.tiktok.com/community-guidelines?lang=en">
+                                            <h5>Community Guidelines</h5>
+                                        </a>
+                                        <a href="https://www.tiktok.com/legal/page/global/copyright-policy/en">
+                                            <h5>Copyright</h5>
+                                        </a>
+                                        <a href="https://www.tiktok.com/legal/law-enforcement?lang=en">
+                                            <h5>Law Enforcement Guidelines</h5>
+                                        </a>
                                     </div>)
                                 }
                             </div></span>
