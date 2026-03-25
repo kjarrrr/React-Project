@@ -1,13 +1,13 @@
 
 
 export function VideoExplore({ video }) {
+    const baseUrl = import.meta.env.BASE_URL;
     return (
 
         <div className=" w-48 h-64 group">
             <video
-                src={video.url}
+                src={`${baseUrl}${video.url}`}
                 className=" w-full h-full object-cover rounded-xl my-20"
-
                 loop
                 muted
                 onMouseEnter={(e) => e.target.play()}
