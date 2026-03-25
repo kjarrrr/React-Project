@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router";
+import { useParams, useNavigate } from "react-router-dom";
 import { FollowingStamp } from "../hooks/ApiFollowing";
 
 export function ProfileFamous() {

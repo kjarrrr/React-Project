@@ -3,7 +3,7 @@ import { UseAuth } from "../config/useAuth";
 import { useEffect, useRef, useState } from "react"
 import { auth } from "../config/firebase";
 import { deleteUser } from "firebase/auth";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { signOut } from 'firebase/auth';
 import { FaRegTrashAlt } from "react-icons/fa";
 

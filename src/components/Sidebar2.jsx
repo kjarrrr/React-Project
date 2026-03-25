@@ -1,8 +1,8 @@
 
 import { useState } from 'react';
-import { Link, useNavigate } from "react-router"
+import { Link, useNavigate } from "react-router-dom"
 import { IoIosSearch } from "react-icons/io";
-import { NavLink } from "react-router";
+import { NavLink } from "react-router-dom";
 import { UseAuth } from "../config/useAuth"
 import { signOut } from 'firebase/auth';
 import { auth } from '../config/firebase';

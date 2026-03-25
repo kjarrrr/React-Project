@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 export function VideoFollowing2({ video }) {
     const navigate = useNavigate();
