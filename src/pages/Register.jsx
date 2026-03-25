@@ -4,7 +4,7 @@ import { useState } from "react";
 import { auth, db, provider } from "../config/firebase";
 
 
-export function Registration({ setGetBack, register, setRegister, setUserpage }) {
+export function Registration({ closePopUp ,setGetBack, register, setRegister, setUserpage }) {
 
 
 
@@ -26,6 +26,7 @@ export function Registration({ setGetBack, register, setRegister, setUserpage })
         const errorCode = error.code;
         const errorMessage = error.message;
         alert("Error")
+        closePopUp()
 
         // ..
       });
@@ -43,7 +44,7 @@ export function Registration({ setGetBack, register, setRegister, setUserpage })
           email: user.email,
         }).then(() => {
           alert("Sesión iniciada y perfil creado");
-          setUserpage("username");
+          closePopUp()
         });
       })
       .catch((error) => {

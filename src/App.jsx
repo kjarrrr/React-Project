@@ -1,5 +1,4 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
-import { auth } from "./config/firebase";
 import { Home } from "./pages/Home"
 import { Explore } from "./pages/Explore"
 import { Following } from "./pages/Following"
@@ -101,6 +100,7 @@ function App() {
                   </header>
                   <div className="logButtons">
                     <Registration
+                    closePopUp={closePopUp}
                       setGetBack={setGetBack}
                       register={register}
                       setRegister={setRegister}
