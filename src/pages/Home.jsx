@@ -8,17 +8,19 @@ export function Home() {
 
     useEffect(() => {
         const videosRef = ref(db, 'videos');
-
-        // Escuchamos la base de datos
         const unsubscribe = onValue(videosRef, (snapshot) => {
             const data = snapshot.val();
             if (data) {
-                // Convertimos el objeto de Firebase en una lista y la invertimos (más nuevo primero)
-                const list = Object.values(data).reverse();
-                setVideos(list);
+                // Convertimos a array y FILTRAMOS los que no tengan URL
+                const validVideos = Object.values(data)
+                    .filter(vid => vid && vid.url && vid.url.trim() !== "")
+                    .reverse();
+
+                setVideos(validVideos);
+            } else {
+                setVideos([]);
             }
         });
-
         return () => unsubscribe();
     }, []);
     return (

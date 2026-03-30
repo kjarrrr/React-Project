@@ -10,11 +10,12 @@ export function VideoHome({ video }) {
     const [isLiked, setIsLiked] = useState(false);
     const [comments, setComments] = useState([]);
     const [showComments, setShowComments] = useState(false);
+    const [hasError, setHasError] = useState(false);
 
     // --- 1. LÓGICA DE LA URL (Soluciona el 404) ---
     // Si la URL ya es de Firebase, se usa directa. Si no, se le pega el baseUrl.
-    const finalSrc = video.url?.includes("firebasestorage") 
-        ? video.url 
+    const finalSrc = video.url?.includes("firebasestorage")
+        ? video.url
         : `${baseUrl}${video.url}`;
 
     // --- 2. FIREBASE SYNC ---
@@ -40,7 +41,7 @@ export function VideoHome({ video }) {
                     // Verificamos que videoRef.current NO sea null antes de actuar
                     if (videoRef.current) {
                         if (entry.isIntersecting) {
-                            videoRef.current.play().catch(() => {});
+                            videoRef.current.play().catch(() => { });
                         } else {
                             videoRef.current.pause();
                             videoRef.current.currentTime = 0;
@@ -72,6 +73,8 @@ export function VideoHome({ video }) {
             .then(() => e.target.reset());
     };
 
+    if (hasError) return null;
+
     return (
         <section className="videoSection relative h-screen w-full bg-black flex items-center justify-center">
             <video
@@ -80,7 +83,12 @@ export function VideoHome({ video }) {
                 loop
                 muted
                 playsInline
-                src={finalSrc} /* Usamos la URL filtrada */
+                src={finalSrc}
+                /* 2. CAPTURAMOS EL ERROR DE CARGA AQUÍ */
+                onError={() => {
+                    console.warn("Video no encontrado o URL rota, eliminando del feed...");
+                    setHasError(true);
+                }}
                 onClick={(e) => e.target.paused ? e.target.play() : e.target.pause()}
             />
 
