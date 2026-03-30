@@ -4,7 +4,7 @@ import { auth } from "../config/firebase";
 
 
 
-export function Login({ setGetBack, login, setLogin, closePopUp, setUserpage }) {
+export function Login({ setGetBack, login, setLogin, closePopUp }) {
 
 
   const [email, setEmail] = useState();

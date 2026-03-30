@@ -20,9 +20,6 @@ import { CreateUsername } from "./components/Username-popup"
 import { Following2 } from "./pages/Following2"
 import { ProfileFamous } from "./pages/ProfileFamous"
 
-
-
-
 function App() {
 
   const [popster, setPopster] = useState("login-container")
@@ -32,9 +29,6 @@ function App() {
   const [login, setLogin] = useState("logButtons");
 
   const { toggleDarkMode } = UseDarkMode();
-
-
-
 
   const PopUpper = useRef(null);
 
@@ -59,10 +53,8 @@ function App() {
     navigate("/", { replace: true });
   }, []);
 
-
   return (
     <>
-
       <dialog className="logDialog" ref={PopUpper}>
         {
           userpage === "username" ? (
