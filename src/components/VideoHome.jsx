@@ -20,13 +20,38 @@ export function VideoHome({ video }) {
             if (data) {
                 setLikes(data.likes || 0);
                 if (data.comments) {
-                    // Convertimos el objeto de Firebase en un array de textos
                     setComments(Object.values(data.comments).map(c => c.text));
                 }
             }
         });
         return () => unsubscribe();
     }, [video.id]);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        videoRef.current.play().catch(error => {
+                            console.log("Autoplay bloqueado hasta que el usuario interactúe.");
+                        });
+                    } else {
+                        videoRef.current.pause();
+                        videoRef.current.currentTime = 0;
+                    }
+                });
+            },
+            { threshold: 0.6 } 
+        );
+
+        if (videoRef.current) {
+            observer.observe(videoRef.current);
+        }
+
+        return () => {
+            if (videoRef.current) observer.unobserve(videoRef.current);
+        };
+    }, []);
 
     const handleLike = () => {
         const videoRoute = ref(db, `videos/${video.id}`);
@@ -41,7 +66,7 @@ export function VideoHome({ video }) {
 
     const handleAddComment = (e) => {
         e.preventDefault();
-        const text = e.target.commentInput.value; // Ahora funcionará por el 'name' abajo
+        const text = e.target.commentInput.value;
         if (!text.trim()) return;
 
         const commentsRef = ref(db, `videos/${video.id}/comments`);
@@ -65,7 +90,6 @@ export function VideoHome({ video }) {
 
             <div className="videoOverlay-actions">
                 <div className="flex flex-col items-center gap-4">
-                    {/* CORRECCIÓN: Ahora llama a handleLike */}
                     <button onClick={handleLike}
                         className={`actionBtn ${isLiked ? 'text-red-500' : 'text-white'}`}>
                         ❤️ <span className="block text-xs">{likes}</span>
@@ -92,7 +116,7 @@ export function VideoHome({ video }) {
 
                     <form onSubmit={handleAddComment} className="flex gap-2">
                         <input
-                            name="commentInput" /* IMPORTANTE: para que e.target.commentInput funcione */
+                            name="commentInput" 
                             type="text"
                             placeholder="Añadir comentario..."
                             className="flex-1 bg-gray-800 p-2 rounded text-sm outline-none"
