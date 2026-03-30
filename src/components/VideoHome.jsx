@@ -2,8 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { ref, update, increment, onValue, push } from "firebase/database";
 import { db } from "../config/firebase";
 
-// ... (imports iguales)
-
 export function VideoHome({ video }) {
     const videoRef = useRef(null);
     const baseUrl = import.meta.env.BASE_URL;
@@ -105,7 +103,7 @@ export function VideoHome({ video }) {
                 <div className="absolute bottom-0 left-0 w-full h-1/2 bg-black/80 text-white p-4 rounded-t-2xl z-20 flex flex-col">
                     <div className="flex justify-between mb-4">
                         <h4 className="font-bold">Comentarios</h4>
-                        <button onClick={() => setShowComments(false)}>✕</button>
+                        <button className="p-3 bg-blue-600" onClick={() => setShowComments(false)}>✕</button>
                     </div>
 
                     <div className="flex-1 overflow-y-auto mb-4 space-y-2">
