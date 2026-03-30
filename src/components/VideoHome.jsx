@@ -39,7 +39,7 @@ export function VideoHome({ video }) {
                     }
                 });
             },
-            { threshold: 0.6 } 
+            { threshold: 0.6 }
         );
 
         if (videoRef.current) {
@@ -80,9 +80,12 @@ export function VideoHome({ video }) {
         <section className="videoSection relative h-screen w-full bg-black">
             <video
                 ref={videoRef}
-                className="h-full w-full object-cover"
+                className="videoPlayer" // o la clase que estés usando
                 loop
-                src={`${baseUrl}${video.url}`}
+                muted
+                playsInline
+                src={video.url.startsWith('http') ? video.url : `${baseUrl}${video.url}`}
+
                 onClick={(e) => e.target.paused ? e.target.play() : e.target.pause()}
             />
 
@@ -114,7 +117,7 @@ export function VideoHome({ video }) {
 
                     <form onSubmit={handleAddComment} className="flex gap-2">
                         <input
-                            name="commentInput" 
+                            name="commentInput"
                             type="text"
                             placeholder="Añadir comentario..."
                             className="flex-1 bg-gray-800 p-2 rounded text-sm outline-none"
