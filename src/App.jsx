@@ -2,6 +2,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import { Home } from "./pages/Home"
 import { Explore } from "./pages/Explore"
 import { Following } from "./pages/Following"
+import { Upload } from "./pages/Upload"
 import { Profile } from "./pages/Profile"
 import { Menu } from "./components/Sidebarrier"
 import './styles/global.css'
@@ -196,6 +197,7 @@ function App() {
             <Route path="/Explore" element={<Explore />} />
             <Route path="/Following" element={<Following showPopUp={showPopUp} />} />
             <Route path="/Following2" element={<Following2/>} />
+            <Route path="/Upload" element={<Upload />} />
             <Route path="/Profile" element={<Profile />} />
             <Route path="/ProfileFamous/:username" element={<ProfileFamous />} />
           </Routes>
