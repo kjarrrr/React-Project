@@ -6,9 +6,9 @@ export function Home() {
 
     return (
         <main className="flex justify-center items-center h-screen">
-            <div className="videoFeed">
-                {HomeStamp.map((video) => (
-                    <VideoHome key={video.id} video={video} />
+            <div className="videoFeed"> {/* El contenedor con el snap-type */}
+                {HomeStamp.map((vid) => (
+                    <VideoHome key={vid.id} video={vid} />
                 ))}
             </div>
         </main>
