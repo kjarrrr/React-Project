@@ -90,7 +90,7 @@ export function VideoHome({ video }) {
             />
 
             <div>
-                @{video.user || "usuario"}
+                <p className="flex flex-col text-xl text-white ">@{video.user || "usuario"}</p>
             </div>
 
             <div className="absolute bottom-10 right-4 flex flex-col gap-6 z-10">
