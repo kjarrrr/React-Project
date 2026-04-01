@@ -23,7 +23,7 @@ export function Explore() {
 
     if (selectedVideo) {
         return (
-            <div className="relative h-screen w-full bg-black">
+            <div className="relative h-screen w-full">
                 <button
                     onClick={() => setSelectedVideo(null)}
                     className="absolute top-10 left-5 z-50 bg-white/20 hover:bg-white/40 text-white px-4 py-2 rounded-full transition"
@@ -37,7 +37,7 @@ export function Explore() {
     }
 
     return (
-        <main className="min-h-full bg-black p-4">
+        <main className="flex justify-center items-center h-screen">
             <div className="exploreContainer grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {videos.map((video) => (
                     <VideoExplore
