@@ -22,6 +22,10 @@ export function VideoExplore({ video, onSelect }) {
                     e.target.currentTime = 0;
                 }}
             />
+
+            <div className="relative inset-x-0 bottom-10 text-white p-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                @{video.user || "usuario"}
+            </div>
         </div>
     );
 }

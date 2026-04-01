@@ -1,39 +1,43 @@
 import { useState } from "react";
 import { ref as storageRef, uploadBytes, getDownloadURL } from "firebase/storage";
 import { ref as dbRef, push, set } from "firebase/database";
-import { db, storage } from "../config/firebase"; // Asegúrate de tener 'storage' exportado en tu config
+import { db, storage } from "../config/firebase";
+import { UseAuth } from "../config/useAuth";
 
 export function Upload() {
     const [file, setFile] = useState(null);
     const [description, setDescription] = useState("");
     const [loading, setLoading] = useState(false);
 
+    const { userData } = UseAuth();
+
     const handleUpload = (e) => {
         e.preventDefault();
         if (!file) return alert("Por favor, selecciona un video");
 
+        if (!userData && !auth.currentUser) {
+            return alert("Debes estar logueado para subir videos");
+        }
+
         setLoading(true);
 
-        // 1. Crear referencia en Firebase Storage con nombre único
         const fileName = `${Date.now()}-${file.name}`;
         const fileLocation = storageRef(storage, `videos/${fileName}`);
 
-        // 2. Subir el archivo (Promesa)
         uploadBytes(fileLocation, file)
             .then((snapshot) => {
-                // 3. Obtener la URL de descarga
                 return getDownloadURL(snapshot.ref);
             })
             .then((url) => {
-                // 4. Crear un nuevo espacio en la Realtime Database
                 const videosListRef = dbRef(db, 'videos');
                 const newVideoRef = push(videosListRef);
 
-                // 5. Guardar los datos del video
+                const finalUserName = userData?.usercreate || auth.currentUser?.displayName || "Usuario Anónimo";
+
                 return set(newVideoRef, {
-                    id: newVideoRef.key, // El ID único que genera Firebase
+                    id: newVideoRef.key,
                     url: url,
-                    user: "Usuario_Prueba", // Aquí podrías usar el nombre de una cuenta real
+                    user: finalUserName,
                     description: description,
                     song: "Sonido Original",
                     likes: 0
