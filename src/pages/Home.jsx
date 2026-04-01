@@ -11,7 +11,6 @@ export function Home() {
         const unsubscribe = onValue(videosRef, (snapshot) => {
             const data = snapshot.val();
             if (data) {
-                // Convertimos a array y FILTRAMOS los que no tengan URL
                 const validVideos = Object.values(data)
                     .filter(vid => vid && vid.url && vid.url.trim() !== "")
                     .reverse();
@@ -25,7 +24,7 @@ export function Home() {
     }, []);
     return (
         <main className="flex justify-center items-center h-screen">
-            <div className="videoFeed"> {/* El contenedor con el snap-type */}
+            <div className="videoFeed">
                 {videos.map((vid) => (
                     <VideoHome key={vid.id} video={vid} />
                 ))}

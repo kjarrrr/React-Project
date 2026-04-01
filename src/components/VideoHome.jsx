@@ -12,13 +12,12 @@ export function VideoHome({ video }) {
     const [showComments, setShowComments] = useState(false);
     const [hasError, setHasError] = useState(false);
 
-    // --- 1. LÓGICA DE LA URL (Soluciona el 404) ---
-    // Si la URL ya es de Firebase, se usa directa. Si no, se le pega el baseUrl.
+  
     const finalSrc = video.url?.includes("firebasestorage")
         ? video.url
         : `${baseUrl}${video.url}`;
 
-    // --- 2. FIREBASE SYNC ---
+   
     useEffect(() => {
         const videoDataRef = ref(db, `videos/${video.id}`);
         const unsubscribe = onValue(videoDataRef, (snapshot) => {
@@ -33,12 +32,10 @@ export function VideoHome({ video }) {
         return () => unsubscribe();
     }, [video.id]);
 
-    // --- 3. INTERSECTION OBSERVER (Soluciona el error de 'pause') ---
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
-                    // Verificamos que videoRef.current NO sea null antes de actuar
                     if (videoRef.current) {
                         if (entry.isIntersecting) {
                             videoRef.current.play().catch(() => { });
@@ -63,7 +60,7 @@ export function VideoHome({ video }) {
         const willLike = !isLiked;
         update(videoRoute, { likes: increment(willLike ? 1 : -1) })
             .then(() => setIsLiked(willLike));
-    };
+    };  
 
     const handleAddComment = (e) => {
         e.preventDefault();
@@ -84,7 +81,6 @@ export function VideoHome({ video }) {
                 muted
                 playsInline
                 src={finalSrc}
-                /* 2. CAPTURAMOS EL ERROR DE CARGA AQUÍ */
                 onError={() => {
                     console.warn("Video no encontrado o URL rota, eliminando del feed...");
                     setHasError(true);
@@ -92,7 +88,6 @@ export function VideoHome({ video }) {
                 onClick={(e) => e.target.paused ? e.target.play() : e.target.pause()}
             />
 
-            {/* Overlay Actions */}
             <div className="absolute bottom-10 right-4 flex flex-col gap-6 z-10">
                 <button onClick={handleLike} className={`p-3 rounded-full bg-black/40 ${isLiked ? 'text-red-500' : 'text-white'}`}>
                     ❤️ <span className="block text-xs text-white">{likes}</span>
@@ -107,7 +102,7 @@ export function VideoHome({ video }) {
                 <div className="absolute bottom-0 w-full h-1/2 bg-gray-900/95 text-white p-4 z-20 rounded-t-xl overflow-hidden flex flex-col">
                     <div className="flex justify-between mb-2">
                         <span className="font-bold">Comentarios</span>
-                        <button onClick={() => setShowComments(false)}>✕</button>
+                        <button className="p-3 rounded-full bg-blue-600" onClick={() => setShowComments(false)}>✕</button>
                     </div>
                     <div className="flex-1 overflow-y-auto space-y-2 mb-2">
                         {comments.map((c, i) => (
