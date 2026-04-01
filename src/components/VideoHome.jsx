@@ -8,6 +8,7 @@ export function VideoHome({ video }) {
 
     const [likes, setLikes] = useState(0);
     const [isLiked, setIsLiked] = useState(false);
+    const [userr, setUserr] = useState("");
     const [comments, setComments] = useState([]);
     const [showComments, setShowComments] = useState(false);
     const [hasError, setHasError] = useState(false);
@@ -87,6 +88,10 @@ export function VideoHome({ video }) {
                 }}
                 onClick={(e) => e.target.paused ? e.target.play() : e.target.pause()}
             />
+
+            <div>
+                @{video.user || "usuario"}
+            </div>
 
             <div className="absolute bottom-10 right-4 flex flex-col gap-6 z-10">
                 <button onClick={handleLike} className={`p-3 rounded-full bg-black/40 ${isLiked ? 'text-red-500' : 'text-white'}`}>
