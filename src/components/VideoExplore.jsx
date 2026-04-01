@@ -13,7 +13,7 @@ export function VideoExplore({ video, onSelect }) {
         >
             <video
                 src={finalSrc}
-                className="w-full h-full object-cover rounded-full"
+                className="w-full h-full object-cover rounded-xl"
                 loop
                 muted
                 onMouseEnter={(e) => e.target.play()}
