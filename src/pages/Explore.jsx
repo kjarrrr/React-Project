@@ -37,7 +37,7 @@ export function Explore() {
     }
 
     return (
-        <main className="flex justify-center items-center h-screen">
+        <main className="flex justify-center items-center">
             <div className="exploreContainer grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {videos.map((video) => (
                     <VideoExplore
