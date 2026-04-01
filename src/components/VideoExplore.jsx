@@ -8,12 +8,12 @@ export function VideoExplore({ video, onSelect }) {
 
     return (
         <div
-            className="rounded-full w-48 h-64 group cursor-pointer"
+            className="w-48 h-64 group cursor-pointer"
             onClick={() => onSelect(video)}
         >
             <video
                 src={finalSrc}
-                className="w-full h-full object-cover rounded-xl"
+                className="w-full h-full object-cover rounded-full"
                 loop
                 muted
                 onMouseEnter={(e) => e.target.play()}
