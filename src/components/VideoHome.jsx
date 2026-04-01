@@ -89,9 +89,9 @@ export function VideoHome({ video }) {
                 onClick={(e) => e.target.paused ? e.target.play() : e.target.pause()}
             />
 
-            <div>
-                <p className="flex flex-col text-xl text-white ">@{video.user || "usuario"}</p>
-            </div>
+            
+                <p className="absolute bottom-10 left-4 text-lg text-white ">@{video.user || "usuario"}</p>
+            
 
             <div className="absolute bottom-10 right-4 flex flex-col gap-6 z-10">
                 <button onClick={handleLike} className={`p-3 rounded-full bg-black/40 ${isLiked ? 'text-red-500' : 'text-white'}`}>
