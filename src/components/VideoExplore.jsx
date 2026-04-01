@@ -8,7 +8,7 @@ export function VideoExplore({ video, onSelect }) {
 
     return (
         <div
-            className="w-48 h-64 group cursor-pointer"
+            className="rounded-full w-48 h-64 group cursor-pointer"
             onClick={() => onSelect(video)}
         >
             <video
